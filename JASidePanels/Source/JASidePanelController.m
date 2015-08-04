@@ -293,11 +293,6 @@ static char ja_kvoContext;
     container.clipsToBounds = NO;
 }
 
-- (void)stylePanel:(UIView *)panel {
-    panel.layer.cornerRadius = 6.0f;
-    panel.clipsToBounds = YES;
-}
-
 - (void)_configureContainers {
     self.leftPanelContainer.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
     self.rightPanelContainer.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleHeight;
@@ -681,7 +676,6 @@ static char ja_kvoContext;
     
     _centerPanel.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _centerPanel.view.frame = self.centerPanelContainer.bounds;
-    [self stylePanel:_centerPanel.view];
 }
 
 - (void)_loadLeftPanel {
@@ -691,7 +685,6 @@ static char ja_kvoContext;
         if (!_leftPanel.view.superview) {
             [self _layoutSidePanels];
             _leftPanel.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            [self stylePanel:_leftPanel.view];
             [self.leftPanelContainer addSubview:_leftPanel.view];
         }
         
@@ -706,7 +699,6 @@ static char ja_kvoContext;
         if (!_rightPanel.view.superview) {
             [self _layoutSidePanels];
             _rightPanel.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            [self stylePanel:_rightPanel.view];
             [self.rightPanelContainer addSubview:_rightPanel.view];
         }
         
@@ -904,7 +896,6 @@ static char ja_kvoContext;
     if (!self.centerPanel.view.superview) {
         self.centerPanel.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.centerPanel.view.frame = self.centerPanelContainer.bounds;
-        [self stylePanel:self.centerPanel.view];
         [self.centerPanelContainer addSubview:self.centerPanel.view];
     }
 }
